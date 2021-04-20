@@ -3,7 +3,7 @@
 //  notAHotDog
 //
 //Shehzan Maredia
-//
+// Dan Hepworth
 
 import UIKit
 import SwiftUI
