@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  notAHotDog
 //
-//  Created by Jasmine Harris on 4/9/21.
+//Shehzan Maredia
 //
 
 import UIKit
