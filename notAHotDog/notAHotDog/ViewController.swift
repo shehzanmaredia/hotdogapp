@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import Vision
 import VisionKit
+import CoreML
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
@@ -81,7 +82,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     func isAHotDog (image: CIImage) {
             
         
-            guard let model = try? VNCoreMLModel(for: Inceptionv3.mlmodel) else {
+            guard let model = try? VNCoreMLModel(for: Inceptionv3.model) else {
                 fatalError("Error: unable to load ML model")
             }
             
