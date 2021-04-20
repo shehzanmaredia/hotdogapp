@@ -9,6 +9,8 @@ import UIKit
 import SwiftUI
 import Vision
 import VisionKit
+import CoreML
+import Social
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
@@ -22,6 +24,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     var showActionSheet = false
     
+    var classificationResults : [VNClassificationObservation] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,6 +66,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.image = editedImage
             print("got image")
+            
+            //new changes to convert to CI Image
+            guard let ImageCIo = CIImage(image: image) else { // Convert to a core image
+                fatalError("couldn't convert uiimage to CIImage")
+            }
+            isAHotDog(image: ImageCIo)
+
         }else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             self.image = originalImage
             print("got image")
@@ -94,10 +105,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                 
                     if bestResult.identifier.contains("hotdog") {
                         DispatchQueue.main.async {
-                           // ADD WHAT WE WANT TO HAPPEN IF HOTDOG
                             
                             
-                            // self.navigationItem.title = "Hotdog!"
+                            self.navigationItem.title = "Hotdog!"
                            // self.navigationController?.navigationBar.barTintColor = UIColor.green
                           //  self.navigationController?.navigationBar.isTranslucent = false
                         }
@@ -107,7 +117,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                             // ADD WHAT WE WANT TO HAPPEN IF NOT HOTDOG
                             
                             
-                            // self.navigationItem.title = "Not Hotdog!"
+                            self.navigationItem.title = "Not Hotdog!"
                             //self.navigationController?.navigationBar.barTintColor = UIColor.red
                            // self.navigationController?.navigationBar.isTranslucent = false
                             
