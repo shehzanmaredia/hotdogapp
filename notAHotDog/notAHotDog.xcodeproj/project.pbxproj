@@ -16,7 +16,7 @@
 		A793B0E92620CC5C00FA5FE5 /* notAHotDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793B0E82620CC5C00FA5FE5 /* notAHotDogTests.swift */; };
 		A793B0F42620CC5C00FA5FE5 /* notAHotDogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A793B0F32620CC5C00FA5FE5 /* notAHotDogUITests.swift */; };
 		D4ADE89D2627899D0084888F /* detailHotDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ADE89C2627899D0084888F /* detailHotDogVC.swift */; };
-		E02498D4262E7EF5007D27FF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E02498D3262E7EF5007D27FF /* Inceptionv3.mlmodel */; };
+		E02498D4262E7EF5007D27FF /* Inceptionv3.MLModel in Sources */ = {isa = PBXBuildFile; fileRef = E02498D3262E7EF5007D27FF /* Inceptionv3.MLModel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		A793B0F32620CC5C00FA5FE5 /* notAHotDogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notAHotDogUITests.swift; sourceTree = "<group>"; };
 		A793B0F52620CC5C00FA5FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4ADE89C2627899D0084888F /* detailHotDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailHotDogVC.swift; sourceTree = "<group>"; };
-		E02498D3262E7EF5007D27FF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		E02498D3262E7EF5007D27FF /* Inceptionv3.MLModel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.MLModel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				A793B0D12620CC5900FA5FE5 /* AppDelegate.swift */,
 				A793B0D32620CC5900FA5FE5 /* SceneDelegate.swift */,
 				A793B0D52620CC5900FA5FE5 /* ViewController.swift */,
-				E02498D3262E7EF5007D27FF /* Inceptionv3.mlmodel */,
+				E02498D3262E7EF5007D27FF /* Inceptionv3.MLModel */,
 				A793B0D72620CC5900FA5FE5 /* Main.storyboard */,
 				D4ADE89C2627899D0084888F /* detailHotDogVC.swift */,
 				A793B0DA2620CC5B00FA5FE5 /* Assets.xcassets */,
@@ -264,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E02498D4262E7EF5007D27FF /* Inceptionv3.mlmodel in Sources */,
+				E02498D4262E7EF5007D27FF /* Inceptionv3.MLModel in Sources */,
 				D4ADE89D2627899D0084888F /* detailHotDogVC.swift in Sources */,
 				A793B0D62620CC5900FA5FE5 /* ViewController.swift in Sources */,
 				A793B0D22620CC5900FA5FE5 /* AppDelegate.swift in Sources */,

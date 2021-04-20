@@ -92,16 +92,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     func isAHotDog (image: CIImage) {
             
         
-            guard let model = try? VNCoreMLModel(for: Inceptionv3.mlmodel) else {
+        
+        guard let model = try? VNCoreMLModel(for: Inceptionv3.MLModel) else {
                 fatalError("Error: unable to load ML model")
             }
             
+        
             let request = VNCoreMLRequest(model: model) { request, error in
                 guard let output = request.results as? [VNClassificationObservation],
                     let bestResult = output.first
                     else {
                         fatalError("Error: unexpected result type from VNCoreMLRequest")
                     }
+                
                 
                     if bestResult.identifier.contains("hotdog") {
                         DispatchQueue.main.async {
