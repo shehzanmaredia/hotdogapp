@@ -16,6 +16,6 @@ Plans:
 
 Roles:
 - Camera:
-- Core ML (2 ): Dan (maybe? I’ll look into the library some more) 
+- Core ML and Backend: Shehzan Maredia, Dan
 - Storyboard:
 - Home Screen/Buttons: Jasmine
