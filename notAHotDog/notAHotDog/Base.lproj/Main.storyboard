@@ -179,11 +179,49 @@
             </objects>
             <point key="canvasLocation" x="764" y="52"/>
         </scene>
+        <!--Detail Hot DogVC-->
+        <scene sceneID="zmS-1z-yrc">
+            <objects>
+                <viewController id="1mq-s0-IIc" customClass="detailHotDogVC" customModule="notAHotDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ktg-Gr-SWy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zna-z6-zTp">
+                                <rect key="frame" x="0.0" y="177" width="414" height="719"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notHOTDOG_not" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-Sa-N1O">
+                                <rect key="frame" x="109.5" y="7" width="195" height="192"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="3Mp-H8-Xy2"/>
+                                    <constraint firstAttribute="height" constant="192" id="X2O-KD-Cv3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f2E-2b-EWw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bQs-Sa-N1O" firstAttribute="centerX" secondItem="Ktg-Gr-SWy" secondAttribute="centerX" id="Mx4-w8-bfI"/>
+                            <constraint firstItem="bQs-Sa-N1O" firstAttribute="top" secondItem="Ktg-Gr-SWy" secondAttribute="top" constant="7" id="pHZ-rl-B3M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WId-25-tHt"/>
+                    <connections>
+                        <outlet property="currImage" destination="Zna-z6-zTp" id="BWP-xh-gaS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-ab-kX4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="801"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="notHOTDOG_home" width="224.5" height="177"/>
         <image name="notHOTDOG_is" width="224.5" height="177"/>
+        <image name="notHOTDOG_not" width="224.5" height="177"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
