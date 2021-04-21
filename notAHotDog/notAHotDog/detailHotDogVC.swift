@@ -13,10 +13,17 @@ class detailHotDogVC: UIViewController {
     @IBOutlet weak var currImage: UIImageView!
     var image: UIImage!
     var ishotdog: Bool!
+    @IBOutlet weak var hotdogimage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currImage.image = image
-        // Do any additional setup after loading the view.
+        if ishotdog{
+            hotdogimage.image = UIImage(named: "notHOTDOG_is")
+        }
+        else{
+            hotdogimage.image = UIImage(named: "notHOTDOG_not")
+        }
+
     }
 }
