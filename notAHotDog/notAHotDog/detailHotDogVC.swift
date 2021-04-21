@@ -12,6 +12,7 @@ class detailHotDogVC: UIViewController {
     
     @IBOutlet weak var currImage: UIImageView!
     var image: UIImage!
+    var ishotdog: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()

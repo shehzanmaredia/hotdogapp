@@ -25,6 +25,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     var showActionSheet = false
     
     var classificationResults : [VNClassificationObservation] = []
+    
+    var ishotdog = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,18 +87,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
             // Pass the selected object to the new view controller.
             let destVC = segue.destination as! detailHotDogVC
             destVC.image = self.image
+            destVC.ishotdog = self.ishotdog
     }
-
 
     
     func isAHotDog (image: CIImage) {
-            
+        
+        //guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+        //        fatalError("Error: unable to load ML model")
+     //      }
+        print("at is a hot dog function")
+
+        
+        guard let mlModel = try? Inceptionv3(configuration: .init()).model,
+                      let model = try? VNCoreMLModel(for: mlModel) else {
+                    fatalError("Error: unable to load ML model")
+        }
+        print("got past loading model")
+
         
         
-        guard let model = try? VNCoreMLModel(for: Inceptionv3.MLModel) else {
-                fatalError("Error: unable to load ML model")
-            }
-            
         
             let request = VNCoreMLRequest(model: model) { request, error in
                 guard let output = request.results as? [VNClassificationObservation],
@@ -108,9 +118,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                 
                     if bestResult.identifier.contains("hotdog") {
                         DispatchQueue.main.async {
+                            print("is a hotdog image")
                             
+                            self.ishotdog = true
                             
                             self.navigationItem.title = "Hotdog!"
+                            
                            // self.navigationController?.navigationBar.barTintColor = UIColor.green
                           //  self.navigationController?.navigationBar.isTranslucent = false
                         }
@@ -119,7 +132,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                         DispatchQueue.main.async {
                             // ADD WHAT WE WANT TO HAPPEN IF NOT HOTDOG
                             
-                            
+                            print("not a hotdog image")
+                            self.ishotdog = false
+
                             self.navigationItem.title = "Not Hotdog!"
                             //self.navigationController?.navigationBar.barTintColor = UIColor.red
                            // self.navigationController?.navigationBar.isTranslucent = false
